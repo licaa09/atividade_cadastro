@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minha primeira integração</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    <script
+        src="{{ url_for('static', filename='js/app.js') }}"
+        defer
+    ></script>
+</head>
+
+<body>
+    <main>
+        <p class="eti">Sistema Escala</p>
+
+        <h1>Cadastrar aluno</h1>
+
+        <p>Digite os dados do aluno e acompanhe a resposta do servidor.</p>
+
+        <form id="form">
+            <label for="nome">Nome do aluno</label>
+            <input
+                type="text"
+                name="nome"
+                id="nome"
+                autocomplete="name"
+                placeholder="Ex: Ana Silva"
+                required
+            >
+
+            <label for="email">E-mail</label>
+            <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+                placeholder="Ex: ana@email.com"
+                required
+            >
+
+            <label for="curso">Curso</label>
+            <input
+                type="text"
+                name="curso"
+                id="curso"
+                placeholder="Ex: Análise e Desenvolvimento de Sistemas"
+                required
+            >
+
+            <button id="btn" type="submit">
+                Cadastrar
+            </button>
+        </form>
+
+        <p id="msg" role="status" aria-live="polite">
+            Aguardando cadastro.
+        </p>
+
+        <h1>Excluir aluno</h1>
+
+        <p>Informe o ID recebido após o cadastro.</p>
+
+        <form id="form-excluir">
+            <label for="aluno-id">ID do aluno</label>
+            <input
+                type="number"
+                name="aluno-id"
+                id="aluno-id"
+                min="1"
+                step="1"
+                placeholder="Ex: 1"
+                required
+            >
+
+            <button id="btn-excluir" type="submit">
+                Excluir aluno
+            </button>
+        </form>
+
+        <p id="msg-excluir" role="status" aria-live="polite">
+            Aguardando exclusão.
+        </p>
+
+        <p class="nota">
+            Dados temporários: os cadastros são apagados
+            ao reiniciar o servidor.
+        </p>
+    </main>
+</body>
+
+</html>
